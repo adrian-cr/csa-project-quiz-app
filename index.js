@@ -1,28 +1,19 @@
+/* CONSTANTS */
 const quizContainer = document.getElementById('quiz-container');
 const resultContainer = document.getElementById('result-container');
-const result = document.getElementById("result");
 const controlsContainer = document.getElementById('controls');
-
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
 const submitBtn = document.getElementById('submitBtn');
 const startScreen = document.getElementById('start-screen');
 const startBtn = document.getElementById('startBtn');
 
+/* VARIABLES */
 let questions = [];
 let currentQuestion = 0;
 let userAnswers = [];
 
-startBtn.addEventListener('click', () => {
-  startScreen.style.display = 'none';
-  controlsContainer.style.display = 'flex';
-  fetchQuestions();
-});
-function decodeHTML(html) {
-  const txt = document.createElement('textarea');
-  txt.innerHTML = html;
-  return txt.value;
-}
+/* FUNCTIONS */
 async function fetchQuestions() {
   try {
     const response = await fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple');
@@ -42,8 +33,11 @@ async function fetchQuestions() {
     console.error(error);
   }
 }
-
-
+function decodeHTML(html) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = html;
+  return txt.value;
+}
 function displayQuestion(index) {
   const q = questions[index];
   if (!q) return;
@@ -75,6 +69,12 @@ function captureAnswer() {
   }
 }
 
+/* EVENT LISTENERS: */
+startBtn.addEventListener('click', () => {
+  startScreen.style.display = 'none';
+  controlsContainer.style.display = 'flex';
+  fetchQuestions();
+});
 nextBtn.addEventListener('click', () => {
   if (captureAnswer()) {
     if (currentQuestion < questions.length - 1) {
@@ -83,21 +83,18 @@ nextBtn.addEventListener('click', () => {
     }
   }
 });
-
 prevBtn.addEventListener('click', () => {
   if (currentQuestion > 0) {
     currentQuestion--;
     displayQuestion(currentQuestion);
   }
 });
-
 submitBtn.addEventListener('click', () => {
   if (!captureAnswer()) return;
-  resultContainer.style.display = "block";
+
   let score = 0;
   let correct = 0;
   let incorrect = 0;
-
   questions.forEach((q, index) => {
     if (userAnswers[index] === q.correct) {
       score++;
@@ -108,6 +105,10 @@ submitBtn.addEventListener('click', () => {
   });
   const percentage = ((score / questions.length) * 100).toFixed(2);
 
+  quizContainer.style.display = "none";
+  controlsContainer.style.display = 'none';
+
+  resultContainer.style.display = "block";
   resultContainer.innerHTML = `
     <div id="result">
       <p>Your score:</p>
@@ -119,10 +120,6 @@ submitBtn.addEventListener('click', () => {
       </div>
     </div>
   `;
-
-  quizContainer.style.display = "none";
-  controlsContainer.style.display = 'none';
-
   const restartBtn = document.createElement('button');
   restartBtn.textContent = 'Restart Quiz';
   restartBtn.id = 'restartBtn';
