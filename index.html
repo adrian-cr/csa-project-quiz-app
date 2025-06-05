@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Quizzy!</h1>
+  </header>
+
+  <main>
+    <section id="start-screen">
+      <h2 id="start-heading">Welcome to Quizzy!</h2>
+      <p id="start-subheading">Test your general knowledge with a short multiple-choice quiz.</p>
+      <button id="startBtn">Start Quiz</button>
+    </section>
+    <section id="quiz-container"></section>
+
+    <div id="controls" style="display: none;">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div id="result-container" style="display: none;">
+      <div id="result">
+      </div>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>

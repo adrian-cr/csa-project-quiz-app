@@ -1,0 +1,131 @@
+body {
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  * {
+    font-family: "Lilita One", sans-serif;
+  }
+}
+header {
+  background-color: #96a0ff;
+  color: white;
+  font-size: calc(1.5vw + 1vh);
+  padding: 20px;
+  text-align: center;
+  h1 {
+    margin: 0;
+  }
+}
+main {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60vh;
+  justify-content: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3%;
+  background-color: white;
+  border-radius: 8px;
+}
+button {
+  background-color: #9469ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.2rem;
+
+  min-width: 30%;
+  &:hover {
+    background-color: #af9fff;
+    color: #4f00a3;
+    font-size: 2rem;
+    transition: 300ms;
+  }
+}
+
+/* START SCREEN */
+#start-screen {
+  text-align: center;
+  padding: 2rem;
+}
+#start-heading {
+  font-size: calc(3vw + 3vh);
+  margin: 0;
+}
+#start-subheading {
+  font-size: calc(1.5vw + 3vh);
+}
+#startBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+
+/* QUIZ SCREEN */
+#quiz-container {
+  text-align: center;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+#quiz-container h3 {
+  color: #9469ff;
+  font-size: calc(1vw + 2.5vh);
+  margin: 0 auto 20px;
+}
+label {
+  font-size: calc(0.5vw + 2.5vh);
+  display: block;
+  cursor: pointer;
+  &:hover {
+    color: rgb(165, 202, 255);
+    transition: 200ms;
+  }
+  &:has(input[type="radio"]:checked) {
+    color: rgb(74, 161, 255);
+  }
+}
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+#controls {
+  height: 7vh;
+  gap: 5%;
+  justify-content: center;
+  width: 60%;
+}
+
+/* RESULTS SCREEN */
+#result-container {
+  background-color: #e6f4ff;
+  border: 1px solid #b3d8ff;
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding: 3%;
+  text-align: center;
+  width: 90%;
+}
+#result {
+  font-size: calc(1.5vw + 2vh);
+  display: block;
+  * {
+    margin: 0 0 10px 0;
+  }
+}
+#score {
+  font-size: calc(3vw + 5vh);
+  margin: 20px 0;
+}
+#stats-wrapper{
+  margin-bottom: 30px;
+}
+#restart-btn {
+  height: 50%;
+}
