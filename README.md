@@ -1,5 +1,5 @@
 # Project: Quiz App
-This project contains the code to run a simple and responsive web-based quiz application that fetches JavaScript-related multiple-choice questions from [Open Trivia Database](https://opentdb.com)'s API. Users can test their general knowledge through a series of questions, get immediate scores, and restart the quiz for another attempt.
+This project contains the code to run "Quizzy", a simple yet visually attractive quiz application that fetches JavaScript-related multiple-choice questions from [Open Trivia Database](https://opentdb.com)'s API. Users can test their general knowledge through a series of questions, get immediate scores, and restart the quiz for another attempt.
 
 ## Page Components
 * **Home Screen**: A welcoming start screen with title, description, and a "Start Quiz" button
